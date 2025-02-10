@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "PokeAppJoseJara",
-    "slug": "PokeAppJoseJara",
+    "slug": "poke-app-jose-jara",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -9,13 +9,18 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.jose.jara.salas.pokeappjosejara",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.jose.jara.salas.pokeappjosejara"
     },
     "web": {
       "bundler": "metro",
@@ -36,6 +41,21 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "2eab1beb-7ab1-44b9-9772-4fdc4ae05ad9"
+      }
+    },
+    "owner": "jose.jara.salas",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/2eab1beb-7ab1-44b9-9772-4fdc4ae05ad9"
     }
   }
 }
