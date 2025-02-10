@@ -1,50 +1,53 @@
-# Welcome to your Expo app 👋
+# PokeApp - React Native
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Descripción
+PokeApp es una aplicación móvil desarrollada con **React Native** y **Expo**, diseñada para consumir la API de Pokémon y mostrar información relevante sobre los Pokémon de manera intuitiva y atractiva.
 
-## Get started
+## Tecnologías Utilizadas
+- **React Native**: Framework para desarrollo móvil.
+- **Expo**: Facilitador de desarrollo y pruebas.
+- **Axios**: Cliente HTTP para consumir la API.
+- **React Navigation**: Manejo de navegación entre pantallas.
 
-1. Install dependencies
+## Instalación y Ejecución
+### 🔧 Requisitos previos
+- Tener **Node.js** instalado.
+- Instalar **Expo CLI**:
+  ```sh
+  npm install -g expo-cli
+  ```
 
-   ```bash
+### 🚀 Instalación del Proyecto
+1. Clona el repositorio:
+   ```sh
+   git clone https://github.com/tu-usuario/mi-proyecto.git
+   ```
+2. Entra en la carpeta del proyecto:
+   ```sh
+   cd mi-proyecto
+   ```
+3. Instala las dependencias:
+   ```sh
    npm install
    ```
 
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+### ▶️ Ejecución
+Para correr la aplicación en Expo:
+```sh
+npm start
+```
+O en dispositivos específicos:
+```sh
+npm run android  # Para Android
+npm run ios      # Para iOS
+npm run web      # Para Web
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Contacto
+📞 **Teléfono:** [+51 968097419](tel:+51968097419)  
+📧 **Email:** [jjeampierjs97@gmail.com](mailto:jjeampierjs97@gmail.com)  
+🔗 **LinkedIn:** [José Jara](https://pe.linkedin.com/in/jose-jeampier-jara-salas-882a03236)
 
-## Learn more
+---
+✨ _Desarrollado por José Jara_ ✨
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.

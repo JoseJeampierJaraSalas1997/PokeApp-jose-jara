@@ -1,11 +1,21 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-
+import { Image, StyleSheet, Linking, TouchableOpacity, Animated } from 'react-native';
+import { useEffect, useRef } from 'react';
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 export default function HomeScreen() {
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 1000,
+      useNativeDriver: true,
+    }).start();
+  }, [fadeAnim]);
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -15,54 +25,62 @@ export default function HomeScreen() {
           style={styles.reactLogo}
         />
       }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
+      <Animated.View style={[styles.cardContainer, { opacity: fadeAnim }]}> 
+        <ThemedText type="title">Bienvenido a mi Aplicación</ThemedText>
         <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
+      </Animated.View>
+      <ThemedView style={styles.cardContainer}>
+        <ThemedText type="subtitle">Sobre esta Aplicación</ThemedText>
         <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
+          Esta aplicación ha sido desarrollada utilizando <ThemedText type="defaultSemiBold">React Native</ThemedText>,
+          siguiendo principios de <ThemedText type="defaultSemiBold">modularidad, escalabilidad y eficiencia</ThemedText>.
         </ThemedText>
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
+      <ThemedView style={styles.cardContainer}>
+        <ThemedText type="subtitle">Características Clave</ThemedText>
         <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
+          - <ThemedText type="defaultSemiBold">Modularidad:</ThemedText> Componentes reutilizables.
+          {'\n'}
+          - <ThemedText type="defaultSemiBold">Consumo de Datos:</ThemedText> API REST optimizada.
+          {'\n'}
+          - <ThemedText type="defaultSemiBold">Funcionalidad:</ThemedText> Navegación fluida.
+          {'\n'}
+          - <ThemedText type="defaultSemiBold">Escalabilidad:</ThemedText> Expansión sin pérdida de rendimiento.
         </ThemedText>
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
+      <ThemedView style={styles.cardContainer}>
+        <ThemedText type="subtitle">Tecnologías y Librerías Utilizadas</ThemedText>
         <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
+          - React Native, Expo, Axios, React Navigation.
         </ThemedText>
+      </ThemedView>
+      <ThemedView style={styles.cardContainer}>
+        <ThemedText type="subtitle">Contacto</ThemedText>
+        <TouchableOpacity onPress={() => Linking.openURL('tel:+51968097419')}>
+          <ThemedText type="defaultSemiBold">📞 Llamar: +51 968097419</ThemedText>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => Linking.openURL('mailto:jjeampierjs97@gmail.com')}>
+          <ThemedText type="defaultSemiBold">📧 Enviar Email</ThemedText>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => Linking.openURL('https://pe.linkedin.com/in/jose-jeampier-jara-salas-882a03236')}>
+          <ThemedText type="defaultSemiBold">🔗 LinkedIn</ThemedText>
+        </TouchableOpacity>
       </ThemedView>
     </ParallaxScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  cardContainer: {
+    margin: 16,
+    padding: 16,
+    borderRadius: 12,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    elevation: 5,
   },
   reactLogo: {
     height: 178,
